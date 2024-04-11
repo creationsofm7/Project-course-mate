@@ -16,7 +16,7 @@ function Page() {
   return (
     <Coursecontext.Provider value={[coursecode, setCourseCode]}>
       <Videocontext.Provider value={[src, setSrc]}>
-        <div className="grid">
+        <div className="grid h-screen">
           <div className=" text-center bg-none grid-item ">
             <Embeder source={src} />
             {/* <p className="text-left p-2">

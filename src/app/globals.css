@@ -64,6 +64,7 @@ body {
   grid-template-columns: 1.5fr 0.5fr;
   gap: 0.2rem;
   width: 100%;
+  ;
 }
 
 .grid-item {
