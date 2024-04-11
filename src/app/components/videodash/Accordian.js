@@ -96,8 +96,8 @@ export default function Acco() {
             </h4>
 
             {topic.resources.map((resource) => (
-              <Card className="bg-gray-900 w-90 h-18 rounded-sm m-1 font-light text-small">
-                key={resource.title}
+              <Card className="bg-gray-900 w-90 h-18 rounded-sm m-1 font-light text-small" key={resource.title}>
+                
                 <CardBody>
                   <div className="grid-2 rounded-none" onClick={(e) => {setSrc(resource.link)  }}>
                     {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
@@ -120,8 +120,8 @@ export default function Acco() {
             ))}
             {topic.assignments.map((quiz) => (
               
-              <Card className="bg-gray-900 w-90 h-18 rounded-none m-1 font-light text-small">
-                key={quiz.title}
+              <Card className="bg-gray-900 w-90 h-18 rounded-none m-1 font-light text-small" key={quiz.title}>
+                
                 <CardBody>
                   <div className="grid-2" onClick={() => { /* Add your onClick handler here */ }}>
                     <img src="https://via.placeholder.com/75x50" alt="image" />
