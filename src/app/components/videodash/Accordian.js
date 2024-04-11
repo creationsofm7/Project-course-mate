@@ -7,13 +7,12 @@ import {
   CardFooter,
 } from "@nextui-org/react";
 import { useState, useEffect } from "react";
-import Modalform from "../add_module_form";
 import Topicform from "../add_topic_form";
 import { useContext } from "react";
 import { Coursecontext, Videocontext } from "../../Main/page";
 import { Devcontext } from "./Primary";
 
-export default function Acco(props) {
+export default function Acco() {
   const [courseData, setCourseData] = useState(null);
   const [coursecode, setCourseCode] = useContext(Coursecontext);
   const [src, setSrc] = useContext(Videocontext);

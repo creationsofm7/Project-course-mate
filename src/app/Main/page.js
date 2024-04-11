@@ -3,13 +3,13 @@
 import React from "react";
 import Primary from "../components/videodash/Primary";
 import { Textarea } from "@nextui-org/react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { createContext, useContext } from "react";
 
 export const Videocontext = createContext(null);
 export const Coursecontext = createContext(null);
 //ADD cant add two same name courses option okay?
-function page() {
+function Page() {
   const [coursecode, setCourseCode] = useState("ML101");
   const [src, setSrc] = useState("https://www.youtube.com/embed/aGuZTE8-lOQ?si=I2BzFApZoK3ghI2Q");
 
@@ -38,7 +38,7 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
 
 //add a coder mode where people can write code which automatically converts the video to a p2p video
 
