@@ -27,6 +27,10 @@ export default function All_courses() {
         <div
           key={index}
           className="bg-white shadow-lg rounded-lg p-4 text-center flex-1 m-2"
+          onClick={() => {
+            // window.location.href = "/course/" + item.course_code;}
+            window.location.href = "/Main";}
+          }
         >
           <h2 className="text-xl font-medium text-black">{item.course_name}</h2>
           <p className="text-sm text-gray-500 mt-4">{item.course_code}</p>

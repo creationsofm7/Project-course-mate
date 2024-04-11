@@ -35,7 +35,7 @@ export default function Acco() {
 
   const deleteResource= async ([topic_name ,resource_name]) => {
     const response = await fetch(
-      "https://course-mate-test-backend.onrender.com/courses/" + coursecode +  "/topics/" + topic_name + "/resources/" + resource_name + "/",
+      "https://course-mate-test-backend.onrender.com/courses/" + coursecode +  "/topics/" + topic_name + "/resources/" + resource_name ,
       {
         method: "DELETE",
         headers: {
@@ -43,6 +43,7 @@ export default function Acco() {
         },
         body: JSON.stringify({
           topic_name: topic_name,
+          resource_name: resource_name,
         }),
       }
     );
@@ -103,13 +104,17 @@ export default function Acco() {
                     {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
                     {resource.title}
                     {devMode && <button
-                className=" text-white p-1 rounded-md "
+                className=" text-white p-1 ml-28 rounded-md text-right "
                 onClick={() => {
-                  deleteResource([topic.topic_name, resource.title]);
-                  window.location.reload();
+                  deleteResource([topic.topic_name ,resource.title]);
+                    setTimeout(() => {
+                    window.location.reload();
+                    }, 1000);
+                  
                 }}
               >
-                X
+                Delete
+                
               </button>}
                     
                   </div>

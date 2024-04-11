@@ -3,15 +3,18 @@
 import React from "react";
 import Primary from "../components/videodash/Primary";
 import { Textarea } from "@nextui-org/react";
-import { useState} from "react";
+import { useState } from "react";
 import { createContext, useContext } from "react";
+
 
 export const Videocontext = createContext(null);
 export const Coursecontext = createContext(null);
 //ADD cant add two same name courses option okay?
 function Page() {
   const [coursecode, setCourseCode] = useState("ML101");
-  const [src, setSrc] = useState("https://www.youtube.com/embed/aGuZTE8-lOQ?si=I2BzFApZoK3ghI2Q");
+  const [src, setSrc] = useState(
+    "https://www.youtube.com/watch?v=Z2N5a7XZWg8"
+  );
 
   return (
     <Coursecontext.Provider value={[coursecode, setCourseCode]}>
@@ -49,24 +52,21 @@ function Embeder(props) {
         className="w-full height"
         allowFullScreen
         rel="0"
-        src={props.source}
+        src={convertToEmbedUrl(props.source)}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
+      
     </div>
   );
 }
 
-// function convertToEmbedUrl(url) {
-//   let videoId = url.split('v=')[1];
-//   let ampersandPosition = videoId.indexOf('&');
-//   if(ampersandPosition != -1) {
-//       videoId = videoId.substring(0, ampersandPosition);
-//   }
-//   return "https://www.youtube.com/embed/" + videoId;
-// }
-
-// let normalUrl = "https://www.youtube.com/watch?v=cJlM3AIFMaw";
-// let embedUrl = convertToEmbedUrl(normalUrl);
-// console.log(embedUrl);  // Outputs: https://www.youtube.com/embed/cJlM3AIFMaw
+function convertToEmbedUrl(url) {
+  let videoId = url.split('v=')[1];
+  let ampersandPosition = videoId.indexOf('&');
+  if(ampersandPosition != -1) {
+      videoId = videoId.substring(0, ampersandPosition);
+  }
+  return "https://www.youtube.com/embed/" + videoId;
+}
 
