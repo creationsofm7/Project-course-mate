@@ -77,6 +77,7 @@ export default function Acco() {
       <Accordion variant="shadow" className="acco bg-black text-white ">
         {courseData.topics.map((topic) => (
           <AccordionItem
+              key={topic.topic_name}
             //insert one dropdown icon in indicator field
               className="text-white"
               title={topic.topic_name}
@@ -96,6 +97,7 @@ export default function Acco() {
 
             {topic.resources.map((resource) => (
               <Card className="bg-gray-900 w-90 h-18 rounded-sm m-1 font-light text-small">
+                key={resource.title}
                 <CardBody>
                   <div className="grid-2 rounded-none" onClick={(e) => {setSrc(resource.link)  }}>
                     {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
@@ -117,7 +119,9 @@ export default function Acco() {
               </Card>
             ))}
             {topic.assignments.map((quiz) => (
+              
               <Card className="bg-gray-900 w-90 h-18 rounded-none m-1 font-light text-small">
+                key={quiz.title}
                 <CardBody>
                   <div className="grid-2" onClick={() => { /* Add your onClick handler here */ }}>
                     <img src="https://via.placeholder.com/75x50" alt="image" />

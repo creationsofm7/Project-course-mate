@@ -67,14 +67,13 @@ export default function Login() {
             Log in
           </Button>
           <p className="text-center translate-x-2">
-            Don't have an account?
+            Don&apos;t have an account?
             <Link color="primary" href="/signup" className="rounded-lg">
               Sign up
             </Link>
           </p>
         </form>
       </div>
-     
     </>
   );
 }
