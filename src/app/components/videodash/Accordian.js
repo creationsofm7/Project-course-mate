@@ -2,10 +2,9 @@ import React from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import {
   Card,
-  CardHeader,
+
   CardBody,
   CardFooter,
-  Divider,
 } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import Modalform from "../add_module_form";

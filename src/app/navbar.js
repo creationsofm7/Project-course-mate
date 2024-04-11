@@ -9,7 +9,6 @@ import {
   User,
 } from "@nextui-org/react";
 
-import { AcmeLogo } from "./AcmeLogo.jsx";
 
 export default function Navbar11() {
   return (
