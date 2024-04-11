@@ -23,11 +23,11 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen ">
-      <form onSubmit={handleSubmit} className="text-center">
+    <div className="justify-center items-center h-screen flex ">
+      <form onSubmit={handleSubmit} className="text-center w-3/4 lg:w-72">
         <div>
           <Button
-            className=" mb-4 w-full bg-white border-1 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center"
+            className="mb-4 w-full bg-white border-1 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center"
             onClick={() => {
               // Add your logic here for what should happen when the Google Sign In button is clicked
             }}
@@ -47,7 +47,7 @@ export default function Login() {
           type="email"
           placeholder="Email"
           isRequired
-          className="mb-4 rounded-lg"
+          className="mb-4 rounded-lg "
         />
         <Input
           type={isVisible ? "text" : "password"}
