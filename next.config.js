@@ -1,6 +1,20 @@
 // This file is used to configure the Next.js app.
+
+const withPWA = require('next-pwa')({
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development'
+  })
+
+
 /** @type {import('next').NextConfig} */
+
+
+
 const nextConfig = {
+    
+    
     async headers() {
         return [
             {
@@ -17,4 +31,4 @@ const nextConfig = {
     },
 }
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig)
