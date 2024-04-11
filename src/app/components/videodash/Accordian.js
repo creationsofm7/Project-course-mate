@@ -20,7 +20,7 @@ export default function Acco() {
 
   const deleteTopic = async (topic_name) => {
     const response = await fetch(
-      "http://127.0.0.1:8000/courses/" + coursecode +  "/topics/" + topic_name + "/",
+      "https://course-mate-test-backend.onrender.com/courses/" + coursecode +  "/topics/" + topic_name + "/",
       {
         method: "DELETE",
         headers: {
@@ -35,7 +35,7 @@ export default function Acco() {
 
   const deleteResource= async ([topic_name ,resource_name]) => {
     const response = await fetch(
-      "http://127.0.0.1:8000/courses/" + coursecode +  "/topics/" + topic_name + "/resources/" + resource_name + "/",
+      "https://course-mate-test-backend.onrender.com/courses/" + coursecode +  "/topics/" + topic_name + "/resources/" + resource_name + "/",
       {
         method: "DELETE",
         headers: {
@@ -51,7 +51,7 @@ export default function Acco() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:8000/courses/" + coursecode + "/topics/"
+        "https://course-mate-test-backend.onrender.com/courses/" + coursecode + "/topics/"
       ); // Replace with your API endpoint
       const data = await response.json();
       setCourseData(data);

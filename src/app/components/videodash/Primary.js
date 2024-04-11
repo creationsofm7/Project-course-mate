@@ -17,7 +17,7 @@ function Primary() {
   
 
   async function fetchPeople() {
-    fetch("http://localhost:8000/courses/" + coursecode + "/")
+    fetch("https://course-mate-test-backend.onrender.com/courses/" + coursecode + "/")
       .then((response) => response.json())
       .then((data) => {
         setList(data);

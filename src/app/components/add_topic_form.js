@@ -36,7 +36,7 @@ export default function Topicform(props) {
 
     // Add your logic here to submit the form
     const response = await fetch(
-      "http://127.0.0.1:8000/courses/" +
+      "https://course-mate-test-backend.onrender.com/courses/" +
         props.course_code +
         "/topics/" +
         topic_name +
