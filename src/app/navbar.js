@@ -22,16 +22,7 @@ export default function Navbar11() {
             Sign Up
           </Button>
         </NavbarItem>
-        <NavbarItem>
-          <User
-            name="Jane Doe"
-            description="Product Designer"
-            avatarProps={{
-              src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-            }}
-            className="text-white"
-          />
-        </NavbarItem>
+        
       </NavbarContent>
     </Navbar>
   );

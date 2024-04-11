@@ -45,7 +45,7 @@ body {
   
 }
 
-.center-this {
+/* .center-this {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +53,7 @@ body {
   background-color: transparent;
   height: 100vh;
 
-}
+} */
 
 .yout {
   border: 1px solid black;
