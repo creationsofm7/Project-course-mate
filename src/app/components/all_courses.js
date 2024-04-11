@@ -8,7 +8,7 @@ export default function All_courses() {
   const [list, setList] = useState([]);
 
   async function fetchPeople() {
-    fetch("https://course-mate-test-backend.onrender.com/course/")
+    fetch("https://course-mate-test-backend.onrender.com/course")
       .then((response) => response.json())
       .then((data) => {
         setList(data);
