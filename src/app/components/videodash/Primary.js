@@ -32,7 +32,7 @@ function Primary() {
   
 
   return (
-    <div className="primary bg-black text-white">
+    <div className="primary bg-black text-white h-screen">
       <h4 className="p-4 select-none">
         <p className="text-gray-500">Course {list.course_code}</p>
         {list.course_name}
