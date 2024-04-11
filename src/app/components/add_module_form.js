@@ -28,7 +28,7 @@ export default function Modalform(props) {
     console.log("Module Description: ", moduleDescription);
 
     // Add your logic here to submit the form
-    const response = await fetch('http://127.0.0.1:8000/courses/'+ props.course_code + '/topics/', {
+    const response = await fetch('https://course-mate-test-backend.onrender.com/courses/'+ props.course_code + '/topics/', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
