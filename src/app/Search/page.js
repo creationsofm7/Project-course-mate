@@ -81,7 +81,7 @@ function All_courses() {
           key={index}
           className="bg-white shadow-lg rounded-lg p-4 text-justify m-2 cursor-pointer"
           onClick={() => {
-            router.push(`/search/learn/${item.course_code}`);
+            router.push(`/Search/learn/${item.course_code}`);
           }}
         >
           <h2 className="text-xl font-medium text-black">{item.course_name}</h2>

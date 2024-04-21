@@ -18,7 +18,7 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push("/search");
+    router.push("/Search");
 
     // Add your logic here for what should happen when the form is submitted
   };
@@ -50,7 +50,7 @@ export default function Login() {
             <Button
               className="mb-4 w-full bg-white border-1 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center"
               onClick={() => {
-                router.push("/search");
+                router.push("/Search");
                 // Add your logic here for what should happen when the Google Sign In button is clicked
               }}
             >

@@ -4,7 +4,7 @@ import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import Topicform from "../add_topic_form";
 import { useContext } from "react";
-import { Coursecontext, Videocontext } from "../../search/learn/[code]/page";
+import { Coursecontext, Videocontext } from "../../Search/learn/[code]/page";
 import { Devcontext } from "./Primary";
 
 export default function Acco() {
