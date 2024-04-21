@@ -3,7 +3,7 @@
 import Navbar11 from "../navbar";
 
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
     children, // will be a page or nested layout
   }) {
     return (
