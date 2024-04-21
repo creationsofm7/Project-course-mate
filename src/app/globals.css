@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 200, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.text-foreground {
+  color: white;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+
+
+.navi {
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(10px);
+  
+}
+
+/* .center-this {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 100vh;
+
+} */
+
+.yout {
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: 0.2rem;
+  width: 100%;
+  ;
+}
+
+.grid-item {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem;
+  text-align: center;
+  margin: 0;
+
+
+}
+
+.card {
+  background-color: rgb(0, 0, 0);
+  border-radius: 0.1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.height {
+  height: 600px;
+}
+
+.button-width {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  
+
+}
+
+.acco {
+  background-color: rgba(0, 0, 0, 0.932);
+  color: white;
+  margin-top: 0;
+  border-radius: 0%;
+  
+}
+.grid-2 {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  gap: 0.7rem;
+  
+
+}
+
+
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+
+      }
+
+  .height {
+    height: 300px;
+  }
+
+
+  .grid-item {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    padding: 0.3rem;
+    text-align: center;
+  }
+}
