@@ -8,6 +8,9 @@
 
 const nextConfig = {
     
+    images: {
+        domains: ['cdn.leonardo.ai'],
+    },
     
     async headers() {
         return [
@@ -25,4 +28,4 @@ const nextConfig = {
     },
 }
 
-module.exports = nextConfig;
+

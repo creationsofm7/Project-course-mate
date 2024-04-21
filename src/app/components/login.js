@@ -6,6 +6,7 @@ import { EyeFilledIcon } from "./EyeFilledIcon";
 import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Login() {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -26,9 +27,11 @@ export default function Login() {
   if (Intro) {
     return (
       <div className="flex flex-col justify-center items-center h-screen ">
-        <h1 className="text-8xl font-bold mb-4">Create Courses with ease</h1>
+        <img src="https://cdn.leonardo.ai/users/8e2e6fc9-b3f2-4d59-8ba7-3c0604abc5ae/generations/8003b030-2381-4ceb-b579-8addc75b9316/variations/Default_sticker_of_a_panda_saying_hi_0_8003b030-2381-4ceb-b579-8addc75b9316_0.png" alt="logo" className="w-3/3" />
+        <h1 className="text-2xl lg:text-6xl text-center m-2 font-bold mb-4">Hello!!
+        <br></br> Continue your learning journey here 👇🏻</h1>
         <Button
-          className="w-1/5 bg-black border hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4 "
+          className="w-3/5 lg:w-1/5 bg-black border hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4 "
           onClick={() => {
             setIntro(false);
           }}

@@ -44,7 +44,7 @@ return (
             </div>
         </div>
         <h2 className="font-urbanist text-center text-3xl font-medium">
-            Your Courses
+            Browse Your Courses
         </h2>
         <div >
             <All_courses />
