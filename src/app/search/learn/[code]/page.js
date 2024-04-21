@@ -1,24 +1,19 @@
 "use client";
 
 import React from "react";
-import Primary from "../../components/videodash/Primary";
+import Primary from "../../../components/videodash/Primary";
 import { Textarea } from "@nextui-org/react";
 import { useState } from "react";
 import { createContext, useContext } from "react";
 
-
-
 export const Videocontext = createContext(null);
 export const Coursecontext = createContext(null);
 //ADD cant add two same name courses option okay?
-function Page() {
-  
-  const [coursecode, setCourseCode] = useState("COMP302")
+function Page({ params }) {
+  const code = params.code;
+
+  const [coursecode, setCourseCode] = useState(code);
   const [src, setSrc] = useState("https://www.youtube.com/watch?v=Z2N5a7XZWg8");
-
-  
-
-  
 
   return (
     <Coursecontext.Provider value={[coursecode, setCourseCode]}>
@@ -80,5 +75,4 @@ function convertToEmbedUrl(url) {
     }
   }
   return "https://www.youtube.com/embed/" + videoId;
-  
 }
