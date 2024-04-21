@@ -16,11 +16,10 @@ const SearchPage = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // Here you can handle the search term, for example, send it to your API
-    console.log(`Searching for: ${searchTerm}`);
     // Inside your component
 
     // Inside handleSearchSubmit
-    router.push("/learn");
+    router.push("/search/learn/" + searchTerm);
   };
 
 return (
