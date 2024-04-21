@@ -10,7 +10,7 @@ import { useState, useEffect, useContext } from "react";
 export default function All_courses() {
   
 
-  router = useRouter();
+  const router = useRouter();
 
   const [list, setList] = useState([]);
 
