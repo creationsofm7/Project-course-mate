@@ -1,3 +1,5 @@
+'use server'
+
 import Navbar11 from "../navbar";
 
 
