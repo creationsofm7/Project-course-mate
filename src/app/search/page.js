@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 
+
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -13,13 +14,44 @@ const SearchPage = () => {
 
   const router = useRouter();
 
-  const handleSearchSubmit = (event) => {
+  const handleSearchSubmit = async (event) => {
     event.preventDefault();
-    // Here you can handle the search term, for example, send it to your API
-    // Inside your component
 
-    // Inside handleSearchSubmit
-    router.push("/search/learn/" + searchTerm);
+    const courseData = {
+      "course_name": searchTerm.toString(),
+      "course_code": searchTerm.substring(0, 3).toLocaleUpperCase() + "101",
+      "instructor": {
+      "name": "string",
+      "email": "string",
+      "office_hours": "string"
+      },
+      "description": "This is an example course",
+      "learning_objectives": [
+      
+      ],
+      "topics": [
+       
+      ]
+    };
+
+    const response = await fetch("https://course-mate-test-backend.onrender.com/courses/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(courseData),
+
+    });
+
+    if (response.ok) {
+      console.log("Course added successfully");
+    }
+
+    else {
+      console.error("Error adding course");
+    }
+
+    router.push("/search/learn/" + searchTerm.substring(0, 3).toLocaleUpperCase()+"101");
   };
 
 return (
@@ -37,7 +69,7 @@ return (
                         value={searchTerm}
                         onChange={handleSearchChange}
                         required
-                        
+                        maxLength={69}
                         className="flex-grow px-2 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full font-urbanist m-3"
                     />
                 </form>

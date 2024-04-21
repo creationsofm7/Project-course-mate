@@ -31,6 +31,7 @@ function Page({ params }) {
               label="Lecture Notes"
               placeholder="Take Your notes here and we will save them for later."
               className="w-full "
+              
             />
           </div>
           <Primary className="grid-item" />
