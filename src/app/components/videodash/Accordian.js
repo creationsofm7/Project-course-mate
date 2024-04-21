@@ -99,12 +99,12 @@ export default function Acco() {
             {topic.resources.map((resource) => (
               <Card className="bg-gray-900 w-90 h-18 rounded-sm m-1 font-light text-small" key={resource.title}>
                 
-                <CardBody>
+                <CardBody className="flex-1">
                   <div className="grid-2 rounded-none" onClick={(e) => {setSrc(resource.link)  }}>
                     {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
                     {resource.title}
                     {devMode && <button
-                className=" text-white p-1 ml-28 rounded-md text-right "
+                className=" text-white bg-red-500 p-1  rounded-md text-right static "
                 onClick={() => {
                   deleteResource([topic.topic_name ,resource.title]);
                     setTimeout(() => {

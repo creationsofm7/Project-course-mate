@@ -13,7 +13,7 @@ export const Coursecontext = createContext(null);
 //ADD cant add two same name courses option okay?
 function Page() {
   
-  const [coursecode, setCourseCode] = useState("ML101")
+  const [coursecode, setCourseCode] = useState("COMP302")
   const [src, setSrc] = useState("https://www.youtube.com/watch?v=Z2N5a7XZWg8");
 
   
