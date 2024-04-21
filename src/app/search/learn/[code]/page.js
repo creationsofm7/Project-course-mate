@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Primary from "../../../components/videodash/Primary";
+import Primary from "./videodash/Primary";
 import { Textarea } from "@nextui-org/react";
 import { useState } from "react";
 import { createContext, useContext } from "react";
@@ -13,7 +13,7 @@ function Page({ params }) {
   const code = params.code;
 
   const [coursecode, setCourseCode] = useState(code);
-  const [src, setSrc] = useState("https://www.youtube.com/watch?v=Z2N5a7XZWg8");
+  const [src, setSrc] = useState("https://www.youtube.com/watch?v=P6FORpg0KVo");
 
   return (
     <Coursecontext.Provider value={[coursecode, setCourseCode]}>

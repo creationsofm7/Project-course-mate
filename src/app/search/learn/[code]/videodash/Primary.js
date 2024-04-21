@@ -1,10 +1,10 @@
 "use client";
 
-import Modalform from "../add_module_form";
+import Modalform from "../../../../components/add_module_form";
 import Acco from "./Accordian";
 import { Switch } from "@nextui-org/react";
 import { useState, useEffect, useContext, createContext } from "react";
-import { Coursecontext } from "../../search/learn/[code]/page";
+import { Coursecontext } from "../page";
 
 export const Devcontext = createContext(null);
 
