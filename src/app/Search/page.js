@@ -79,12 +79,12 @@ function All_courses() {
       {list.map((item, index) => (
         <div
           key={index}
-          className="bg-white shadow-lg rounded-lg p-4 text-justify m-2 cursor-pointer"
+          className="bg-white hover:bg-black hover:text-white shadow-lg rounded-lg p-4 text-justify m-2 cursor-pointer transition-all duration-40 ease-in-out"
           onClick={() => {
             router.push(`/search/learn/${item.course_code}`);
           }}
         >
-          <h2 className="text-xl font-medium text-black">{item.course_name}</h2>
+          <h2 className="text-xl font-medium t">{item.course_name}</h2>
           <p className="text-sm text-gray-500 mt-4">{item.course_code}</p>
           <div className="mt-8">{item.description}</div>
         </div>
