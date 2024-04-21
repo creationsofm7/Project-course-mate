@@ -23,33 +23,35 @@ const SearchPage = () => {
     router.push("/learn");
   };
 
-  return (
+return (
     <>
-      <div className="search-page flex justify-center items-center mt-20">
-        <div className="text-center mb-4 w-2/4 ">
-          <h1 className="text-8xl font-bold font-urbanist">CourseMate</h1>
-          <form
-            onSubmit={handleSearchSubmit}
-            className="flex items-center justify-center mt-4"
-          >
-            <input
-              type="text"
-              placeholder="Basic Web Programming..."
-              value={searchTerm}
-              onChange={handleSearchChange}
-              required
-              className="flex-grow px-2 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full font-urbanist"
-            />
-          </form>
+        <div className="search-page flex justify-center items-center mt-20 ">
+            <div className="text-center mb-4 w-full lg:w-2/3 ">
+                <h1 className="text-5xl text-center font-bold font-urbanist md:text-4xl lg:text-8xl sm:text-4xl">CourseMate</h1>
+                <form
+                    onSubmit={handleSearchSubmit}
+                    className="flex items-center justify-center mt-4"
+                >
+                    <input
+                        type="text"
+                        placeholder="Basic Web Programming..."
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        required
+                        
+                        className="flex-grow px-2 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full font-urbanist m-3"
+                    />
+                </form>
+            </div>
         </div>
-      </div>
-      <h2 className="font-urbanist text-center text-3xl font-medium">
-        Your Courses
-      </h2>
-        <All_courses />
-     
+        <h2 className="font-urbanist text-center text-3xl font-medium">
+            Your Courses
+        </h2>
+        <div >
+            <All_courses />
+        </div>
     </>
-  );
+);
 };
 
 export default SearchPage;
@@ -75,7 +77,7 @@ function All_courses() {
   }, []);
 
   return (
-    <div className="flex flex-row m-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {list.map((item, index) => (
         <div
           key={index}

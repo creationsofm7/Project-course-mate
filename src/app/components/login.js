@@ -25,10 +25,10 @@ export default function Login() {
 
   if (Intro) {
     return (
-      <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center h-screen ">
         <h1 className="text-8xl font-bold mb-4">Create Courses with ease</h1>
         <Button
-          className="w-1/5 bg-black border hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4"
+          className="w-1/5 bg-black border hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4 "
           onClick={() => {
             setIntro(false);
           }}
