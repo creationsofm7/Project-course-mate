@@ -27,6 +27,7 @@ const SearchPage = () => {
       },
       "description": "This is an example course",
       "learning_objectives": [
+        
       
       ],
       "topics": [

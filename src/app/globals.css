@@ -106,7 +106,7 @@ body {
   background: linear-gradient(to right, #ff9a9e, #fad0c4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 200s infinite;
+  animation: gradientAnimation 50s infinite;
 }
 
 @keyframes gradientAnimation {

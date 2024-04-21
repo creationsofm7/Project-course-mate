@@ -12,7 +12,11 @@ export const Devcontext = createContext(null);
 
 function Primary() {
   const [list, setList] = useState([]);
-  const [devMode, setDevMode] = useState(false);
+  const [devMode, setDevMode] = useState(localStorage.getItem('devMode') === 'true');
+
+  useEffect(() => {
+    localStorage.setItem('devMode', devMode);
+  }, [devMode]);
   const [coursecode, setCourseCode] = useContext(Coursecontext);
   
 
