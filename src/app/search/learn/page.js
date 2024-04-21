@@ -1,17 +1,24 @@
 "use client";
 
 import React from "react";
-import Primary from "../components/videodash/Primary";
+import Primary from "../../components/videodash/Primary";
 import { Textarea } from "@nextui-org/react";
 import { useState } from "react";
 import { createContext, useContext } from "react";
+
+
 
 export const Videocontext = createContext(null);
 export const Coursecontext = createContext(null);
 //ADD cant add two same name courses option okay?
 function Page() {
-  const [coursecode, setCourseCode] = useState("ML101");
+  
+  const [coursecode, setCourseCode] = useState("ML101")
   const [src, setSrc] = useState("https://www.youtube.com/watch?v=Z2N5a7XZWg8");
+
+  
+
+  
 
   return (
     <Coursecontext.Provider value={[coursecode, setCourseCode]}>
@@ -28,7 +35,7 @@ function Page() {
             <Textarea
               label="Lecture Notes"
               placeholder="Take Your notes here and we will save them for later."
-              className="w-full"
+              className="w-full "
             />
           </div>
           <Primary className="grid-item" />

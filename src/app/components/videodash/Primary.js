@@ -4,7 +4,7 @@ import Modalform from "../add_module_form";
 import Acco from "./Accordian";
 import { Switch } from "@nextui-org/react";
 import { useState, useEffect, useContext, createContext } from "react";
-import { Coursecontext } from "../../Main/page";
+import { Coursecontext } from "../../search/learn/page";
 
 export const Devcontext = createContext(null);
 
@@ -12,7 +12,7 @@ export const Devcontext = createContext(null);
 
 function Primary() {
   const [list, setList] = useState([]);
-  const [devMode, setDevMode] = useState(true);
+  const [devMode, setDevMode] = useState(false);
   const [coursecode, setCourseCode] = useContext(Coursecontext);
   
 

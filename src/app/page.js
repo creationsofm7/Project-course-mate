@@ -1,10 +1,23 @@
+
+"use server"
+
 import React from 'react';
 import Login from './components/login';
 
-export default function Home() {
+
+
+
+
+
+export default async function Home() {
+
+ 
+  
   return (
     <>
+ 
       <Login />
+    
     </>
   );
 }

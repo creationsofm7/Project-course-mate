@@ -1,10 +1,17 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+
 
 export default function All_courses() {
+  
+
+  router = useRouter();
+
   const [list, setList] = useState([]);
 
   async function fetchPeople() {
@@ -20,23 +27,22 @@ export default function All_courses() {
     fetchPeople();
   }, []);
 
+  
+
   return (
-    <div className="flex flex-wrap m-2">
-      
+    <div className="flex flex-row m-2">
       {list.map((item, index) => (
         <div
           key={index}
-          className="bg-white shadow-lg rounded-lg p-4 text-center flex-1 m-2"
+          className="bg-white shadow-lg rounded-lg p-4 text-justify m-2 cursor-pointer"
           onClick={() => {
-            // window.location.href = "/course/" + item.course_code;}
-            window.location.href = "/Main";}
-          }
+            router.push(`/learn/${item.course_code}`);
+            
+          }}
         >
           <h2 className="text-xl font-medium text-black">{item.course_name}</h2>
           <p className="text-sm text-gray-500 mt-4">{item.course_code}</p>
-          <div className="mt-8"></div>
-
-          {item.description}
+          <div className="mt-8">{item.description}</div>
         </div>
       ))}
     </div>

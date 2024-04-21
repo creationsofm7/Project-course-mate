@@ -1,3 +1,5 @@
+"use server"
+
 import React from "react";
 import {
   Navbar,
@@ -10,7 +12,7 @@ import {
 } from "@nextui-org/react";
 
 
-export default function Navbar11() {
+export default async function Navbar11() {
   return (
     <Navbar position="static" className="navi">
       <NavbarBrand>

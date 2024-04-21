@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from "react";
 import Topicform from "../add_topic_form";
 import { useContext } from "react";
-import { Coursecontext, Videocontext } from "../../Main/page";
+import { Coursecontext, Videocontext } from "../../search/learn/page";
 import { Devcontext } from "./Primary";
 
 export default function Acco() {
