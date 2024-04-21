@@ -28,7 +28,7 @@ export default function Login() {
       <div className="flex flex-col justify-center items-center h-screen">
         <h1 className="text-8xl font-bold mb-4">Create Courses with ease</h1>
         <Button
-          className="w-1/5 bg-white border hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4"
+          className="w-1/5 bg-black border hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center mb-4"
           onClick={() => {
             setIntro(false);
           }}
@@ -40,12 +40,16 @@ export default function Login() {
   } else {
     return (
       <div className="justify-center items-center h-screen flex ">
-        <form onSubmit={handleSubmit} className="text-center w-3/4 lg:w-72">
+        <form onSubmit={handleSubmit} className="text-center   w-3/4 lg:w-72">
+          <img
+            src="https://cdn.leonardo.ai/users/8e2e6fc9-b3f2-4d59-8ba7-3c0604abc5ae/generations/d4b38e85-12f6-4f68-b25b-73547d4329f8/variations/Default_a_sticker_of_cat_wearing_headphones_and_reading_heads_0_d4b38e85-12f6-4f68-b25b-73547d4329f8_0.png"
+            alt="Cute Cat"
+            className=" "
+          />
           <div>
             <Button
               className="mb-4 w-full bg-white border-1 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center"
               onClick={() => {
-                event.preventDefault();
                 router.push("/search");
                 // Add your logic here for what should happen when the Google Sign In button is clicked
               }}
