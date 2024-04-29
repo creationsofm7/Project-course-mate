@@ -27,12 +27,12 @@ function Page({ params }) {
           related to a particular topic. You can add a video to the dashboard
           by clicking the button below.
         </p> */}
-            <Textarea
+            {/* <Textarea
               label="Lecture Notes"
               placeholder="Take Your notes here and we will save them for later."
               className="w-full "
               
-            />
+            /> */}
           </div>
           <Primary className="grid-item" />
         </div>
