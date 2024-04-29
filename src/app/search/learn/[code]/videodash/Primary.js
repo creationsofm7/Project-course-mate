@@ -45,14 +45,16 @@ function Primary() {
           className="p-1"
           isSelected={devMode}
           onChange={() => setDevMode(!devMode)}
+          isDisabled={true}
         >
           Developer Mode
         </Switch>
       </h4>
       <Devcontext.Provider value={[devMode, setDevMode]}>
        <Acco />
+       {devMode && <Modalform course_code={coursecode} />}
       </Devcontext.Provider>
-      {devMode && <Modalform course_code={coursecode} />}
+      
     </div>
   );
 }
