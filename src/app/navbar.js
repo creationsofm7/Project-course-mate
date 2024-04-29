@@ -12,11 +12,20 @@ import {
 } from "@nextui-org/react";
 
 
+
+
 export default async function Navbar11() {
+
+  
+
+  
   return (
     <Navbar position="static" className="navi">
       <NavbarBrand>
-        <p className="font-bold text-inherit text-white font-urbanist text-2xl gt ">CourseMate+</p>
+        <a href="/search">
+          <p className="font-bold text-inherit text-white font-urbanist text-2xl gt ">CourseMate+</p>
+        </a>
+
       </NavbarBrand>
       <NavbarContent className="sm:flex gap-4" justify="center">
         <NavbarItem>
