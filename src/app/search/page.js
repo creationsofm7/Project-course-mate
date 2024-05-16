@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Input, Tooltip } from "@nextui-org/react";
-import { SearchIcon } from "./SearchIcon";
+import { SearchIcon } from "./searchicon";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
