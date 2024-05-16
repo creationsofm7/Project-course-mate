@@ -50,11 +50,11 @@ export default function Modalform(props) {
   };
 
   return (
-    <>
+    <div className="bg-black p-2">
       <Button
         onPress={onOpen}
         color="primary"
-        className="h-14 p-4 button-width"
+        className="h-14 p-4 w-full"
       >
         Add Module
       </Button>
@@ -94,6 +94,6 @@ export default function Modalform(props) {
           )}
         </ModalContent>
       </Modal>
-    </>
+    </div>
   );
 }

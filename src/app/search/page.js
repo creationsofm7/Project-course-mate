@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-
+import { Input, Tooltip } from "@nextui-org/react";
+import { SearchIcon } from "./SearchIcon";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,80 +18,89 @@ const SearchPage = () => {
     event.preventDefault();
 
     const courseData = {
-      "course_name": searchTerm.toString(),
-      "course_code": searchTerm.substring(0, 3).toLocaleUpperCase() + "101",
-      "instructor": {
-      "name": "string",
-      "email": "string",
-      "office_hours": "string"
+      course_name: searchTerm.toString(),
+      course_code: searchTerm.substring(0, 3).toLocaleUpperCase() + "101",
+      instructor: {
+        name: "string",
+        email: "string",
+        office_hours: "string",
       },
-      "description": "This is an example course",
-      "learning_objectives": [
-        
-      
-      ],
-      "topics": [
-       
-      ]
+      description: "This is an example course",
+      learning_objectives: [],
+      topics: [],
     };
 
-    const response = await fetch("https://course-mate-test-backend.onrender.com/courses/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(courseData),
-
-    });
+    const response = await fetch(
+      "https://course-mate-test-backend.onrender.com/courses/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(courseData),
+      }
+    );
 
     if (response.ok) {
       console.log("Course added successfully");
-    }
-
-    else {
+    } else {
       console.error("Error adding course");
     }
 
-    router.push("/search/learn/" + searchTerm.substring(0, 3).toLocaleUpperCase()+"101");
+    router.push(
+      "/search/learn/" + searchTerm.substring(0, 3).toLocaleUpperCase() + "101"
+    );
   };
 
-return (
+  return (
     <>
-        <div className="search-page flex justify-center items-center mt-20 ">
-            <div className="text-center mb-4 w-full lg:w-2/3 ">
-                <h1 className="text-5xl text-center font-bold font-urbanist md:text-4xl lg:text-8xl sm:text-4xl">CourseMate</h1>
-                <form
-                    onSubmit={handleSearchSubmit}
-                    className="flex items-center justify-center mt-4"
+      <div className="search-page flex justify-center items-center mt-20 ">
+        <div className="text-center mb-4 w-full lg:w-2/3 ">
+          <h1 className="text-5xl text-center font-bold font-urbanist md:text-4xl lg:text-8xl sm:text-4xl">
+            CourseMate
+          </h1>
+          <form
+            onSubmit={handleSearchSubmit}
+            className="flex items-center justify-center mt-4"
+          >
+            <Input
+              type="text"
+              placeholder="Basic Web Programming..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              radius="full"
+              startContent={<SearchIcon />}
+              isRequired
+              variant="bordered"
+              size="lg"
+              maxLength={69}
+              className="pl-8 pr-8"
+              endContent={
+                <button
+                  type="submit"
+                  className="bg-black text-white px-4 py-2 rounded-3xl"
                 >
-                    <input
-                        type="text"
-                        placeholder="Basic Web Programming..."
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        required
-                        maxLength={69}
-                        className="flex-grow px-2 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full font-urbanist m-3"
-                    />
-                </form>
-            </div>
+                  Learn
+                </button>
+              }
+            />
+          </form>
         </div>
-        <h2 className="font-urbanist text-center text-3xl font-medium">
-            Browse Your Courses
-        </h2>
-        <div >
-            <All_courses />
-        </div>
+      </div>
+      <h2 className="font-urbanist text-center text-3xl font-semibold">
+        Browse Your Courses
+      </h2>
+      <div>
+        <All_courses />
+      </div>
     </>
-);
+  );
 };
 
 export default SearchPage;
 
 function All_courses() {
   const router = useRouter();
-
- 
 
   const [list, setList] = useState([]);
 
@@ -123,6 +132,14 @@ function All_courses() {
           <div className="mt-8">{item.description}</div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function Searchfilter() {
+  return (
+    <div>
+      <h1>Searchfilter</h1>
     </div>
   );
 }

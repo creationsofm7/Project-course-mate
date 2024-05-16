@@ -80,35 +80,32 @@ export default function Acco() {
   return loading ? (
     <div className="text-center">Loading...</div>
   ) : courseData ? (
-    <Accordion
-      variant="shadow"
-      className="acco bg-black text-white cursor-pointer "
-    >
+    <Accordion variant="shadow" className="bg-black text-white cursor-pointer ">
       {courseData.topics.map((topic) => (
         <AccordionItem
           key={topic.topic_name}
           //insert one dropdown icon in indicator field
-          className="text-white"
+          className="text-2xl font-semibold text-white mb-2"
           title={topic.topic_name}
         >
-          <h4 className="text-xs p-1 flex justify-between">
+          <h4 className="text-gray-300 mb-4 text-sm">
             {topic.description}{" "}
             {devMode && (
               <button
-                className="bg-red-500 text-white p-1 rounded-md "
+                className="text-red-500 hover:text-red-700 mb-4"
                 onClick={() => {
                   deleteTopic(topic.topic_name);
                   window.location.reload();
                 }}
               >
-                DELETE
+                DELETE TOPIC
               </button>
             )}
           </h4>
 
           {topic.resources.map((resource) => (
             <Card
-              className="bg-gray-900 w-90 h-18 rounded-sm m-1 font-light text-small cursor-pointer"
+              className=" flex justify-between bg-gray-800 p-0 mt-2 rounded-lg shadow-md cursor-pointer"
               key={resource.title}
             >
               <CardBody className="flex-1">
@@ -119,10 +116,13 @@ export default function Acco() {
                   }}
                 >
                   {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
-                  {resource.title}
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {resource.title}
+                  </h3>
+
                   {devMode && (
                     <button
-                      className=" text-white bg-red-500 p-1  rounded-md text-right static "
+                      className=" text-red-500 hover:text-red-700 mb-2 text-right static text-base"
                       onClick={() => {
                         deleteResource([topic.topic_name, resource.title]);
                         setTimeout(() => {
@@ -140,26 +140,27 @@ export default function Acco() {
           ))}
           {topic.assignments.map((quiz) => (
             <Card
-              className="bg-gray-900 w-90 h-18 rounded-none m-1 font-light text-small cursor-pointer"
+              className="flex items-center bg-gray-800 p-0 rounded-lg shadow-inner cursor-pointer mt-2 "
               key={quiz.title}
             >
               <CardBody>
-                <div
-                  className="grid-2"
-                  onClick={() => {
-                    /* Add your onClick handler here */
-                  }}
-                >
-                  <img src="https://via.placeholder.com/75x50" alt="image" />
-                  {quiz.title}
+                <div>
+                  {/* <img src="https://via.placeholder.com/75x50" alt="image" /> */}
+                  <h3 className="text-lg font-medium text-white">
+                    {quiz.title}
+                  </h3>
                 </div>
               </CardBody>
-              <CardFooter className="text-sm">Due: {quiz.due_date}</CardFooter>
+              <CardFooter className="text-gray-100 text-sm">
+                Due: {quiz.due_date}
+              </CardFooter>
             </Card>
           ))}
           {devMode && (
             <Topicform
               topicname={topic.topic_name.toString()}
+              className="bg-black"
+              
               course_code={coursecode.toString()}
             />
           )}

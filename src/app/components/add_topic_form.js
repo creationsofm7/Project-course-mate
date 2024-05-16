@@ -65,7 +65,7 @@ export default function Topicform(props) {
 
   return (
     <>
-      <Button onPress={onOpen} color="primary" className="h-8 p-4 button-width">
+      <Button onPress={onOpen} color="primary" className="h-8 p-2 w-full mt-2">
         Add Resource
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
